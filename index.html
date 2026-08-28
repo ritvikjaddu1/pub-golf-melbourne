@@ -70,13 +70,25 @@
     width:24px; height:24px; border-radius:50%; background:var(--fairway);
     color:var(--paper); font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:700;
   }
-  .hole{ display:flex; align-items:center; gap:12px; padding:9px 0; border-bottom:1px solid var(--line); }
+  .hole{ padding:10px 0; border-bottom:1px solid var(--line); }
   .hole:last-child{ border-bottom:none; }
+  .hole-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .hole-rule{
+    margin:5px 0 0 30px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+  .hole-rule .pt{ margin-left:4px; }
   .hole-no{ font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:13px; color:var(--ink-soft); width:20px; flex-shrink:0; }
   .hole-venue{ font-weight:600; font-size:14.5px; flex:1; min-width:0; }
   .hole-drink{
     font-family:'IBM Plex Mono', monospace; font-size:11.5px; background:var(--whisky-light);
     color:#7A4A17; border:1px solid #D8B885; padding:3px 8px; border-radius:20px; white-space:nowrap; flex-shrink:0;
+  }
+  .hole-par{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:700; background:var(--fairway-light);
+    color:var(--fairway); border:1px solid #B7CBB4; padding:3px 8px; border-radius:20px; white-space:nowrap; flex-shrink:0;
   }
   details{ border:1px solid var(--line); border-radius:8px; margin-bottom:10px; background:rgba(255,255,255,0.35); }
   details + details{ margin-top:10px; }
@@ -155,7 +167,7 @@
 <div class="card">
 
   <div class="stub">
-    <div class="eyebrow">Round Card · 10 Holes</div>
+    <div class="eyebrow">Round Card · 9 Holes</div>
     <h1>PUB GOLF</h1>
     <div class="subtitle">Downtown Melbourne, FL — <strong>New Haven Ave Course</strong></div>
     <div class="perforation"></div>
@@ -164,16 +176,42 @@
   <section>
     <h2><span class="num">1</span>The Course</h2>
     <div class="holes">
-      <div class="hole"><span class="hole-no">01</span><span class="hole-venue">Van Beers Bottle &amp; Tap</span><span class="hole-drink">Pint</span></div>
-      <div class="hole"><span class="hole-no">02</span><span class="hole-venue">Mainstreet Pub</span><span class="hole-drink">Glass of white wine</span></div>
-      <div class="hole"><span class="hole-no">03</span><span class="hole-venue">Ember &amp; Oak</span><span class="hole-drink">Double mixer</span></div>
-      <div class="hole"><span class="hole-no">04</span><span class="hole-venue">The Landing Rooftop</span><span class="hole-drink">Seltzer can</span></div>
-      <div class="hole"><span class="hole-no">05</span><span class="hole-venue">Meg O'Malley's</span><span class="hole-drink">Double shot</span></div>
-      <div class="hole"><span class="hole-no">06</span><span class="hole-venue">Foo Bar Cocktail Lounge</span><span class="hole-drink">Whisky mixer</span></div>
-      <div class="hole"><span class="hole-no">07</span><span class="hole-venue">Whiskey Business</span><span class="hole-drink">Cider</span></div>
-      <div class="hole"><span class="hole-no">08</span><span class="hole-venue">The Creek Saloon</span><span class="hole-drink">Glass of red wine</span></div>
-      <div class="hole"><span class="hole-no">09</span><span class="hole-venue">Hell 'n Blazes Brewing Co.</span><span class="hole-drink">Bloody mary</span></div>
-      <div class="hole"><span class="hole-no">10</span><span class="hole-venue">Drews Brews and Grille</span><span class="hole-drink">Wheel spin for drink</span></div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">01</span><span class="hole-venue">Van Beers Bottle &amp; Tap</span><span class="hole-drink">Pint</span><span class="hole-par">Par 4</span></div>
+        <div class="hole-rule">Rule: Left-hand drinking <span class="pt plus">+1</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">02</span><span class="hole-venue">Mainstreet Pub</span><span class="hole-drink">Glass of white wine</span><span class="hole-par">Par 3</span></div>
+        <div class="hole-rule">Rule: No swearing <span class="pt plus">+1</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">03</span><span class="hole-venue">Ember &amp; Oak</span><span class="hole-drink">Double mixer</span><span class="hole-par">Par 4</span></div>
+        <div class="hole-rule">Rule: No phones <span class="pt plus">+1</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">04</span><span class="hole-venue">The Landing Rooftop</span><span class="hole-drink">Seltzer can</span><span class="hole-par">Par 4</span></div>
+        <div class="hole-rule">Rule: No first names <span class="pt plus">+1</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">05</span><span class="hole-venue">Meg O'Malley's</span><span class="hole-drink">Double shot</span><span class="hole-par">Par 2</span></div>
+        <div class="hole-rule">Rule: Water hole — no toilet trips <span class="pt plus">+3</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">06</span><span class="hole-venue">Foo Bar Cocktail Lounge</span><span class="hole-drink">Whisky mixer</span><span class="hole-par">Par 3</span></div>
+        <div class="hole-rule">Rule: Teammate holds your drink for you <span class="pt plus">+1</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">07</span><span class="hole-venue">Whiskey Business</span><span class="hole-drink">Cider</span><span class="hole-par">Par 4</span></div>
+        <div class="hole-rule">Rule: Can't say the word "drink" <span class="pt plus">+1</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">08</span><span class="hole-venue">The Creek Saloon</span><span class="hole-drink">Glass of red wine</span><span class="hole-par">Par 3</span></div>
+        <div class="hole-rule">Rule: No resting your drink anywhere <span class="pt plus">+1</span></div>
+      </div>
+      <div class="hole">
+        <div class="hole-top"><span class="hole-no">09</span><span class="hole-venue">Hell 'n Blazes Brewing Co.</span><span class="hole-drink">Wheel spin for drink</span><span class="hole-par">Par 3</span></div>
+        <div class="hole-rule">Rule: No pointing <span class="pt plus">+1</span></div>
+      </div>
     </div>
   </section>
 
@@ -199,19 +237,6 @@
         <li>Falling over — outside <span class="pt plus">+3</span></li>
         <li>Throwing up — in toilet <span class="pt plus">+5</span></li>
         <li>Throwing up — anywhere else <span class="pt plus">+10</span></li>
-      </ul>
-    </details>
-    <details class="rules">
-      <summary>House Rules <span style="font-weight:400;text-transform:none;">tap for list</span></summary>
-      <ul class="ref-list">
-        <li>Left-hand drinking <span class="pt plus">+1</span></li>
-        <li>No swearing <span class="pt plus">+1</span></li>
-        <li>No phones <span class="pt plus">+1</span></li>
-        <li>No first names <span class="pt plus">+1</span></li>
-        <li>Water hole — no toilet trips <span class="pt plus">+3</span></li>
-        <li>Name-wheel silence until next hole <span class="pt plus">+1</span></li>
-        <li>Teammate holds your drink for you <span class="pt">—</span></li>
-        <li>Carry your partner to the next bar <span class="pt">—</span></li>
       </ul>
     </details>
   </section>
@@ -243,7 +268,7 @@
           <tr>
             <th class="player-col">Player</th>
             <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-            <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+            <th>6</th><th>7</th><th>8</th><th>9</th>
             <th>Total</th>
             <th></th>
           </tr>
@@ -291,7 +316,7 @@
     const input = document.getElementById('playerName');
     const name = input.value.trim();
     if(!name) return;
-    players.push({ name, scores: Array(10).fill(0) });
+    players.push({ name, scores: Array(9).fill(0) });
     input.value = '';
     render();
   }
