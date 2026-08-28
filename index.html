@@ -20,9 +20,7 @@
     --penalty-light:#F3DAD3;
     --line:#C9BC98;
   }
-
   *{ box-sizing:border-box; }
-
   body{
     margin:0;
     background:
@@ -34,7 +32,6 @@
     display:flex;
     justify-content:center;
   }
-
   .card{
     width:100%;
     max-width:560px;
@@ -44,283 +41,113 @@
     overflow:hidden;
     position:relative;
   }
-
-  .stub{
-    padding:28px 24px 18px;
-    text-align:center;
-    position:relative;
-  }
+  .stub{ padding:28px 24px 18px; text-align:center; position:relative; }
   .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:.18em;
-    color:var(--ink-soft);
-    text-transform:uppercase;
+    font-family:'IBM Plex Mono', monospace; font-size:11px;
+    letter-spacing:.18em; color:var(--ink-soft); text-transform:uppercase;
   }
   h1{
-    font-family:'Bebas Neue', sans-serif;
-    font-size:56px;
-    letter-spacing:.04em;
-    line-height:.9;
-    margin:6px 0 4px;
-    color:var(--ink);
+    font-family:'Bebas Neue', sans-serif; font-size:56px;
+    letter-spacing:.04em; line-height:.9; margin:6px 0 4px; color:var(--ink);
   }
-  .subtitle{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--ink-soft);
-  }
+  .subtitle{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-soft); }
   .subtitle strong{ color:var(--fairway); }
-
-  .perforation{
-    position:relative;
-    height:1px;
-    margin:20px -24px 0;
-    border-top:2px dashed var(--line);
-  }
-  .perforation::before,
-  .perforation::after{
-    content:"";
-    position:absolute;
-    top:-9px;
-    width:18px;
-    height:18px;
-    background:var(--paper-dark);
-    border-radius:50%;
+  .perforation{ position:relative; height:1px; margin:20px -24px 0; border-top:2px dashed var(--line); }
+  .perforation::before,.perforation::after{
+    content:""; position:absolute; top:-9px; width:18px; height:18px;
+    background:var(--paper-dark); border-radius:50%;
   }
   .perforation::before{ left:-9px; }
   .perforation::after{ right:-9px; }
-
   section{ padding:22px 24px; }
   section + section{ border-top:1px dashed var(--line); }
-
   h2{
-    font-family:'Bebas Neue', sans-serif;
-    font-size:22px;
-    letter-spacing:.04em;
-    margin:0 0 14px;
-    display:flex;
-    align-items:center;
-    gap:8px;
+    font-family:'Bebas Neue', sans-serif; font-size:22px; letter-spacing:.04em;
+    margin:0 0 14px; display:flex; align-items:center; gap:8px;
   }
   h2 .num{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:24px; height:24px;
-    border-radius:50%;
-    background:var(--fairway);
-    color:var(--paper);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    font-weight:700;
+    display:inline-flex; align-items:center; justify-content:center;
+    width:24px; height:24px; border-radius:50%; background:var(--fairway);
+    color:var(--paper); font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:700;
   }
-
-  .hole{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:9px 0;
-    border-bottom:1px solid var(--line);
-  }
+  .hole{ display:flex; align-items:center; gap:12px; padding:9px 0; border-bottom:1px solid var(--line); }
   .hole:last-child{ border-bottom:none; }
-  .hole-no{
-    font-family:'IBM Plex Mono', monospace;
-    font-weight:700;
-    font-size:13px;
-    color:var(--ink-soft);
-    width:20px;
-    flex-shrink:0;
-  }
-  .hole-venue{
-    font-weight:600;
-    font-size:14.5px;
-    flex:1;
-    min-width:0;
-  }
+  .hole-no{ font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:13px; color:var(--ink-soft); width:20px; flex-shrink:0; }
+  .hole-venue{ font-weight:600; font-size:14.5px; flex:1; min-width:0; }
   .hole-drink{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    background:var(--whisky-light);
-    color:#7A4A17;
-    border:1px solid #D8B885;
-    padding:3px 8px;
-    border-radius:20px;
-    white-space:nowrap;
-    flex-shrink:0;
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; background:var(--whisky-light);
+    color:#7A4A17; border:1px solid #D8B885; padding:3px 8px; border-radius:20px; white-space:nowrap; flex-shrink:0;
   }
-
-  details{
-    border:1px solid var(--line);
-    border-radius:8px;
-    margin-bottom:10px;
-    background:rgba(255,255,255,0.35);
-  }
+  details{ border:1px solid var(--line); border-radius:8px; margin-bottom:10px; background:rgba(255,255,255,0.35); }
   details + details{ margin-top:10px; }
   summary{
-    cursor:pointer;
-    list-style:none;
-    padding:12px 14px;
-    font-family:'IBM Plex Mono', monospace;
-    font-weight:700;
-    font-size:12.5px;
-    text-transform:uppercase;
-    letter-spacing:.06em;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    cursor:pointer; list-style:none; padding:12px 14px; font-family:'IBM Plex Mono', monospace;
+    font-weight:700; font-size:12.5px; text-transform:uppercase; letter-spacing:.06em;
+    display:flex; justify-content:space-between; align-items:center;
   }
   summary::-webkit-details-marker{ display:none; }
-  summary::after{
-    content:"+";
-    font-family:'IBM Plex Sans',sans-serif;
-    font-size:18px;
-    line-height:1;
-  }
+  summary::after{ content:"+"; font-family:'IBM Plex Sans',sans-serif; font-size:18px; line-height:1; }
   details[open] summary::after{ content:"–"; }
   .ref-list{ padding:0 14px 14px; margin:0; list-style:none; }
-  .ref-list li{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    font-size:13.5px;
-    padding:7px 0;
-    border-top:1px dotted var(--line);
-  }
+  .ref-list li{ display:flex; justify-content:space-between; gap:10px; font-size:13.5px; padding:7px 0; border-top:1px dotted var(--line); }
   .ref-list li:first-child{ border-top:none; }
-  .pt{
-    font-family:'IBM Plex Mono', monospace;
-    font-weight:700;
-    font-size:12px;
-    white-space:nowrap;
-    padding:2px 7px;
-    border-radius:4px;
-  }
+  .pt{ font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:12px; white-space:nowrap; padding:2px 7px; border-radius:4px; }
   .pt.minus{ background:var(--fairway-light); color:var(--fairway); }
   .pt.plus{ background:var(--penalty-light); color:var(--penalty); }
-
   .challenges summary{ background:var(--fairway-light); }
   .penalties summary{ background:var(--penalty-light); }
   .rules summary{ background:var(--whisky-light); }
 
-  .add-player{
-    display:flex;
-    gap:8px;
-    margin-bottom:14px;
+  .status-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:10px; }
+  .lock-row{ display:flex; gap:8px; }
+  .lock-row input{
+    flex:1; font-family:'IBM Plex Mono', monospace; font-size:12.5px; padding:8px 10px;
+    border:1px solid var(--line); border-radius:6px; background:#fff;
   }
+  .lock-row button{
+    font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:12px; padding:0 14px;
+    border:none; border-radius:6px; background:var(--ink); color:var(--paper); cursor:pointer;
+  }
+  .lock-msg{ font-size:12px; color:var(--penalty); font-family:'IBM Plex Mono', monospace; margin-top:6px; display:none; }
+
+  .add-player{ display:flex; gap:8px; margin-bottom:14px; }
   .add-player input{
-    flex:1;
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:14px;
-    padding:10px 12px;
-    border:1px solid var(--line);
-    border-radius:6px;
-    background:#fff;
+    flex:1; font-family:'IBM Plex Sans', sans-serif; font-size:14px; padding:10px 12px;
+    border:1px solid var(--line); border-radius:6px; background:#fff;
   }
   .add-player button{
-    font-family:'IBM Plex Mono', monospace;
-    font-weight:700;
-    font-size:13px;
-    padding:0 16px;
-    border:none;
-    border-radius:6px;
-    background:var(--fairway);
-    color:var(--paper);
-    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:13px; padding:0 16px;
+    border:none; border-radius:6px; background:var(--fairway); color:var(--paper); cursor:pointer;
   }
   .add-player button:active{ transform:scale(.97); }
 
-  .table-wrap{
-    overflow-x:auto;
-    border:1px solid var(--line);
-    border-radius:8px;
-  }
-  table{
-    border-collapse:collapse;
-    width:100%;
-    min-width:560px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-  }
-  th, td{
-    padding:6px;
-    text-align:center;
-    border-bottom:1px solid var(--line);
-    border-right:1px solid var(--line);
-  }
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
+  table{ border-collapse:collapse; width:100%; min-width:560px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; }
+  th, td{ padding:6px; text-align:center; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
   th:last-child, td:last-child{ border-right:none; }
-  thead th{
-    background:var(--paper-dark);
-    font-weight:700;
-    padding:8px 6px;
-  }
-  th.player-col, td.player-col{
-    text-align:left;
-    min-width:110px;
-    font-weight:600;
-    background:rgba(255,255,255,0.4);
-  }
+  thead th{ background:var(--paper-dark); font-weight:700; padding:8px 6px; }
+  th.player-col, td.player-col{ text-align:left; min-width:110px; font-weight:600; background:rgba(255,255,255,0.4); }
   tbody tr:last-child td{ border-bottom:none; }
-  td input{
-    width:36px;
-    text-align:center;
-    border:none;
-    background:transparent;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--ink);
-  }
+  td input{ width:36px; text-align:center; border:none; background:transparent; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink); }
+  td input:disabled{ color:var(--ink); opacity:1; -webkit-text-fill-color:var(--ink); }
   td input:focus{ outline:2px solid var(--fairway); border-radius:3px; }
-  .total-cell{
-    font-weight:700;
-    background:var(--paper-dark);
+  .total-cell{ font-weight:700; background:var(--paper-dark); }
+  .remove-btn{ background:none; border:none; color:var(--penalty); cursor:pointer; font-size:14px; padding:0 0 0 6px; }
+  tr.leader td.total-cell{ background:var(--fairway); color:var(--paper); }
+  .empty-note{ font-size:13px; color:var(--ink-soft); font-style:italic; padding:8px 0 0; }
+  .badge{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase;
+    padding:3px 9px; border-radius:20px;
   }
-  .remove-btn{
-    background:none;
-    border:none;
-    color:var(--penalty);
-    cursor:pointer;
-    font-size:14px;
-    padding:0 0 0 6px;
-  }
-  tr.leader td.total-cell{
-    background:var(--fairway);
-    color:var(--paper);
-  }
+  .badge.view{ background:var(--paper-dark); color:var(--ink-soft); }
+  .badge.edit{ background:var(--fairway); color:var(--paper); }
 
-  .empty-note{
-    font-size:13px;
-    color:var(--ink-soft);
-    font-style:italic;
-    padding:8px 0 0;
-  }
+  .footer-stub{ text-align:center; padding:22px 24px 28px; }
+  .footer-stub .tag{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft); letter-spacing:.05em; }
+  .winner-line{ margin-top:14px; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft); }
+  .winner-line span{ display:inline-block; min-width:160px; border-bottom:1px solid var(--ink-soft); margin-left:6px; }
 
-  .footer-stub{
-    text-align:center;
-    padding:22px 24px 28px;
-  }
-  .footer-stub .tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--ink-soft);
-    letter-spacing:.05em;
-  }
-  .winner-line{
-    margin-top:14px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--ink-soft);
-  }
-  .winner-line span{
-    display:inline-block;
-    min-width:160px;
-    border-bottom:1px solid var(--ink-soft);
-    margin-left:6px;
-  }
-
-  @media (max-width:400px){
-    h1{ font-size:44px; }
-  }
+  @media (max-width:400px){ h1{ font-size:44px; } }
 </style>
 </head>
 <body>
@@ -352,7 +179,6 @@
 
   <section>
     <h2><span class="num">2</span>Scoring Reference</h2>
-
     <details class="challenges">
       <summary>Challenges (from hole 4) <span style="font-weight:400;text-transform:none;">tap for list</span></summary>
       <ul class="ref-list">
@@ -364,7 +190,6 @@
         <li>Shot, any time <span class="pt minus">−2</span></li>
       </ul>
     </details>
-
     <details class="penalties">
       <summary>Penalties <span style="font-weight:400;text-transform:none;">tap for list</span></summary>
       <ul class="ref-list">
@@ -376,7 +201,6 @@
         <li>Throwing up — anywhere else <span class="pt plus">+10</span></li>
       </ul>
     </details>
-
     <details class="rules">
       <summary>House Rules <span style="font-weight:400;text-transform:none;">tap for list</span></summary>
       <ul class="ref-list">
@@ -393,13 +217,27 @@
   </section>
 
   <section>
-    <h2><span class="num">3</span>Players</h2>
-    <div class="add-player">
-      <input type="text" id="playerName" placeholder="Add a player name…" maxlength="18">
-      <button onclick="addPlayer()">Add</button>
+    <div class="status-row">
+      <h2 style="margin:0;"><span class="num">3</span>Scorecard</h2>
+      <span class="badge view" id="modeBadge">View only</span>
     </div>
 
-    <div class="table-wrap">
+    <div id="lockPanel">
+      <div class="lock-row">
+        <input type="password" id="passcodeInput" placeholder="Organizer passcode">
+        <button onclick="tryUnlock()">Unlock</button>
+      </div>
+      <div class="lock-msg" id="lockMsg">Wrong passcode.</div>
+    </div>
+
+    <div id="editControls" style="display:none; margin-top:14px;">
+      <div class="add-player">
+        <input type="text" id="playerName" placeholder="Add a player name…" maxlength="18">
+        <button onclick="addPlayer()">Add</button>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-top:14px;">
       <table id="scoreTable">
         <thead>
           <tr>
@@ -413,7 +251,7 @@
         <tbody id="scoreBody"></tbody>
       </table>
     </div>
-    <div class="empty-note" id="emptyNote">Add players above to start the scorecard. Lower total wins — points come from the challenges, penalties and rules above.</div>
+    <div class="empty-note" id="emptyNote">No players yet — only the organizer can add them.</div>
   </section>
 
   <div class="footer-stub">
@@ -425,9 +263,31 @@
 </div>
 
 <script>
+  // Only whoever knows this passcode can edit, and only on the device that enters it.
+  // Change this before you publish the site.
+  const ORGANIZER_CODE = "19thhole";
+
   let players = [];
+  let isOrganizer = false;
+
+  function tryUnlock(){
+    const val = document.getElementById('passcodeInput').value;
+    const msg = document.getElementById('lockMsg');
+    if(val === ORGANIZER_CODE){
+      isOrganizer = true;
+      document.getElementById('modeBadge').textContent = 'Organizer — editing';
+      document.getElementById('modeBadge').className = 'badge edit';
+      document.getElementById('lockPanel').style.display = 'none';
+      document.getElementById('editControls').style.display = 'block';
+      msg.style.display = 'none';
+      render();
+    } else {
+      msg.style.display = 'block';
+    }
+  }
 
   function addPlayer(){
+    if(!isOrganizer) return;
     const input = document.getElementById('playerName');
     const name = input.value.trim();
     if(!name) return;
@@ -437,17 +297,19 @@
   }
 
   function removePlayer(idx){
+    if(!isOrganizer) return;
     players.splice(idx,1);
     render();
   }
 
   function updateScore(pIdx, hIdx, val){
+    if(!isOrganizer) return;
     const n = parseInt(val, 10);
     players[pIdx].scores[hIdx] = isNaN(n) ? 0 : n;
-    render(true);
+    render();
   }
 
-  function render(keepFocus){
+  function render(){
     const body = document.getElementById('scoreBody');
     const note = document.getElementById('emptyNote');
     note.style.display = players.length ? 'none' : 'block';
@@ -459,18 +321,22 @@
       const total = totals[pIdx];
       const isLeader = players.length > 1 && total === minTotal;
       const cells = p.scores.map((s, hIdx) =>
-        `<td><input type="number" value="${s}" onchange="updateScore(${pIdx},${hIdx},this.value)"></td>`
+        `<td><input type="number" value="${s}" ${isOrganizer ? '' : 'disabled'} onchange="updateScore(${pIdx},${hIdx},this.value)"></td>`
       ).join('');
+      const removeBtn = isOrganizer ? `<button class="remove-btn" onclick="removePlayer(${pIdx})" title="Remove">✕</button>` : '';
       return `<tr class="${isLeader ? 'leader' : ''}">
         <td class="player-col">${p.name}</td>
         ${cells}
         <td class="total-cell">${total}</td>
-        <td><button class="remove-btn" onclick="removePlayer(${pIdx})" title="Remove">✕</button></td>
+        <td>${removeBtn}</td>
       </tr>`;
     }).join('');
   }
 
-  document.getElementById('playerName').addEventListener('keydown', e => {
+  document.getElementById('passcodeInput').addEventListener('keydown', e => {
+    if(e.key === 'Enter') tryUnlock();
+  });
+  document.getElementById('playerName')?.addEventListener('keydown', e => {
     if(e.key === 'Enter') addPlayer();
   });
 
