@@ -90,6 +90,9 @@
     font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:700; background:var(--fairway-light);
     color:var(--fairway); border:1px solid #B7CBB4; padding:3px 8px; border-radius:20px; white-space:nowrap; flex-shrink:0;
   }
+  .ref-text{ padding:0 14px 14px; }
+  .ref-text p{ font-size:13.5px; line-height:1.55; color:var(--ink); margin:0 0 8px; }
+  .ref-text p:last-child{ margin-bottom:0; }
   details{ border:1px solid var(--line); border-radius:8px; margin-bottom:10px; background:rgba(255,255,255,0.35); }
   details + details{ margin-top:10px; }
   summary{
@@ -98,8 +101,12 @@
     display:flex; justify-content:space-between; align-items:center;
   }
   summary::-webkit-details-marker{ display:none; }
-  summary::after{ content:"+"; font-family:'IBM Plex Sans',sans-serif; font-size:18px; line-height:1; }
-  details[open] summary::after{ content:"–"; }
+  .s-hint{
+    font-weight:400; text-transform:none; display:inline-flex; align-items:center; gap:6px;
+    color:var(--ink-soft);
+  }
+  .s-hint::after{ content:"+"; font-family:'IBM Plex Sans',sans-serif; font-size:18px; line-height:1; font-weight:400; margin-left:2px; }
+  details[open] .s-hint::after{ content:"–"; }
   .ref-list{ padding:0 14px 14px; margin:0; list-style:none; }
   .ref-list li{ display:flex; justify-content:space-between; gap:10px; font-size:13.5px; padding:7px 0; border-top:1px dotted var(--line); }
   .ref-list li:first-child{ border-top:none; }
@@ -108,51 +115,8 @@
   .pt.plus{ background:var(--penalty-light); color:var(--penalty); }
   .challenges summary{ background:var(--fairway-light); }
   .penalties summary{ background:var(--penalty-light); }
+  .general summary{ background:var(--paper-dark); }
   .rules summary{ background:var(--whisky-light); }
-
-  .status-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:10px; }
-  .lock-row{ display:flex; gap:8px; }
-  .lock-row input{
-    flex:1; font-family:'IBM Plex Mono', monospace; font-size:12.5px; padding:8px 10px;
-    border:1px solid var(--line); border-radius:6px; background:#fff;
-  }
-  .lock-row button{
-    font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:12px; padding:0 14px;
-    border:none; border-radius:6px; background:var(--ink); color:var(--paper); cursor:pointer;
-  }
-  .lock-msg{ font-size:12px; color:var(--penalty); font-family:'IBM Plex Mono', monospace; margin-top:6px; display:none; }
-
-  .add-player{ display:flex; gap:8px; margin-bottom:14px; }
-  .add-player input{
-    flex:1; font-family:'IBM Plex Sans', sans-serif; font-size:14px; padding:10px 12px;
-    border:1px solid var(--line); border-radius:6px; background:#fff;
-  }
-  .add-player button{
-    font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:13px; padding:0 16px;
-    border:none; border-radius:6px; background:var(--fairway); color:var(--paper); cursor:pointer;
-  }
-  .add-player button:active{ transform:scale(.97); }
-
-  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
-  table{ border-collapse:collapse; width:100%; min-width:560px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; }
-  th, td{ padding:6px; text-align:center; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
-  th:last-child, td:last-child{ border-right:none; }
-  thead th{ background:var(--paper-dark); font-weight:700; padding:8px 6px; }
-  th.player-col, td.player-col{ text-align:left; min-width:110px; font-weight:600; background:rgba(255,255,255,0.4); }
-  tbody tr:last-child td{ border-bottom:none; }
-  td input{ width:36px; text-align:center; border:none; background:transparent; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink); }
-  td input:disabled{ color:var(--ink); opacity:1; -webkit-text-fill-color:var(--ink); }
-  td input:focus{ outline:2px solid var(--fairway); border-radius:3px; }
-  .total-cell{ font-weight:700; background:var(--paper-dark); }
-  .remove-btn{ background:none; border:none; color:var(--penalty); cursor:pointer; font-size:14px; padding:0 0 0 6px; }
-  tr.leader td.total-cell{ background:var(--fairway); color:var(--paper); }
-  .empty-note{ font-size:13px; color:var(--ink-soft); font-style:italic; padding:8px 0 0; }
-  .badge{
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase;
-    padding:3px 9px; border-radius:20px;
-  }
-  .badge.view{ background:var(--paper-dark); color:var(--ink-soft); }
-  .badge.edit{ background:var(--fairway); color:var(--paper); }
 
   .footer-stub{ text-align:center; padding:22px 24px 28px; }
   .footer-stub .tag{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft); letter-spacing:.05em; }
@@ -185,7 +149,7 @@
         <div class="hole-rule">Rule: No swearing <span class="pt plus">+1</span></div>
       </div>
       <div class="hole">
-        <div class="hole-top"><span class="hole-no">03</span><span class="hole-venue">Ember &amp; Oak</span><span class="hole-drink">Double mixer</span><span class="hole-par">Par 4</span></div>
+        <div class="hole-top"><span class="hole-no">03</span><span class="hole-venue">Debauchery</span><span class="hole-drink">Double mixer</span><span class="hole-par">Par 4</span></div>
         <div class="hole-rule">Rule: No phones <span class="pt plus">+1</span></div>
       </div>
       <div class="hole">
@@ -217,8 +181,19 @@
 
   <section>
     <h2><span class="num">2</span>Scoring Reference</h2>
+
+    <details class="general">
+      <summary><span class="s-label">General Rules</span><span class="s-hint">tap for list</span></summary>
+      <div class="ref-text">
+        <p>Everyone starts the round at zero points — like golf, the <strong>lowest score at the end wins</strong>.</p>
+        <p>Each hole's drink has a par: the number of sips it should take to finish. Count your sips as you drink — every sip over par adds <strong>+1</strong> to your score, and finishing at or under par costs you nothing.</p>
+        <p>Each hole also has its own house rule in effect from the moment you arrive until you leave for the next one — break it and take the point hit shown next to it. From hole 4 onward, challenges are also open: pull one off at any point in the round for bonus points off your total. Penalties apply the whole night, at any hole, whenever they happen.</p>
+        <p>After hole 9, add up everything — sips over par, rules broken, challenges completed, and penalties earned. Whoever has the lowest total wins.</p>
+      </div>
+    </details>
+
     <details class="challenges">
-      <summary>Challenges (from hole 4) <span style="font-weight:400;text-transform:none;">tap for list</span></summary>
+      <summary><span class="s-label">Challenges (from hole 4)</span><span class="s-hint">tap for list</span></summary>
       <ul class="ref-list">
         <li>Photo with a bald guy <span class="pt minus">−1</span></li>
         <li>Get a stranger to buy you a drink <span class="pt minus">−3</span></li>
@@ -229,7 +204,7 @@
       </ul>
     </details>
     <details class="penalties">
-      <summary>Penalties <span style="font-weight:400;text-transform:none;">tap for list</span></summary>
+      <summary><span class="s-label">Penalties</span><span class="s-hint">tap for list</span></summary>
       <ul class="ref-list">
         <li>Light spillage <span class="pt plus">+1</span></li>
         <li>Full drink spilled <span class="pt plus">+7</span></li>
@@ -241,44 +216,6 @@
     </details>
   </section>
 
-  <section>
-    <div class="status-row">
-      <h2 style="margin:0;"><span class="num">3</span>Scorecard</h2>
-      <span class="badge view" id="modeBadge">View only</span>
-    </div>
-
-    <div id="lockPanel">
-      <div class="lock-row">
-        <input type="password" id="passcodeInput" placeholder="Organizer passcode">
-        <button onclick="tryUnlock()">Unlock</button>
-      </div>
-      <div class="lock-msg" id="lockMsg">Wrong passcode.</div>
-    </div>
-
-    <div id="editControls" style="display:none; margin-top:14px;">
-      <div class="add-player">
-        <input type="text" id="playerName" placeholder="Add a player name…" maxlength="18">
-        <button onclick="addPlayer()">Add</button>
-      </div>
-    </div>
-
-    <div class="table-wrap" style="margin-top:14px;">
-      <table id="scoreTable">
-        <thead>
-          <tr>
-            <th class="player-col">Player</th>
-            <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-            <th>6</th><th>7</th><th>8</th><th>9</th>
-            <th>Total</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="scoreBody"></tbody>
-      </table>
-    </div>
-    <div class="empty-note" id="emptyNote">No players yet — only the organizer can add them.</div>
-  </section>
-
   <div class="footer-stub">
     <div class="perforation" style="margin-top:0;"></div>
     <div class="tag" style="margin-top:18px;">LOWEST SCORE WINS · PLAY SAFE · DRINK WATER BETWEEN HOLES</div>
@@ -286,87 +223,6 @@
   </div>
 
 </div>
-
-<script>
-  // Only whoever knows this passcode can edit, and only on the device that enters it.
-  // Change this before you publish the site.
-  const ORGANIZER_CODE = "19thhole";
-
-  let players = [];
-  let isOrganizer = false;
-
-  function tryUnlock(){
-    const val = document.getElementById('passcodeInput').value;
-    const msg = document.getElementById('lockMsg');
-    if(val === ORGANIZER_CODE){
-      isOrganizer = true;
-      document.getElementById('modeBadge').textContent = 'Organizer — editing';
-      document.getElementById('modeBadge').className = 'badge edit';
-      document.getElementById('lockPanel').style.display = 'none';
-      document.getElementById('editControls').style.display = 'block';
-      msg.style.display = 'none';
-      render();
-    } else {
-      msg.style.display = 'block';
-    }
-  }
-
-  function addPlayer(){
-    if(!isOrganizer) return;
-    const input = document.getElementById('playerName');
-    const name = input.value.trim();
-    if(!name) return;
-    players.push({ name, scores: Array(9).fill(0) });
-    input.value = '';
-    render();
-  }
-
-  function removePlayer(idx){
-    if(!isOrganizer) return;
-    players.splice(idx,1);
-    render();
-  }
-
-  function updateScore(pIdx, hIdx, val){
-    if(!isOrganizer) return;
-    const n = parseInt(val, 10);
-    players[pIdx].scores[hIdx] = isNaN(n) ? 0 : n;
-    render();
-  }
-
-  function render(){
-    const body = document.getElementById('scoreBody');
-    const note = document.getElementById('emptyNote');
-    note.style.display = players.length ? 'none' : 'block';
-
-    const totals = players.map(p => p.scores.reduce((a,b)=>a+b,0));
-    const minTotal = players.length ? Math.min(...totals) : null;
-
-    body.innerHTML = players.map((p, pIdx) => {
-      const total = totals[pIdx];
-      const isLeader = players.length > 1 && total === minTotal;
-      const cells = p.scores.map((s, hIdx) =>
-        `<td><input type="number" value="${s}" ${isOrganizer ? '' : 'disabled'} onchange="updateScore(${pIdx},${hIdx},this.value)"></td>`
-      ).join('');
-      const removeBtn = isOrganizer ? `<button class="remove-btn" onclick="removePlayer(${pIdx})" title="Remove">✕</button>` : '';
-      return `<tr class="${isLeader ? 'leader' : ''}">
-        <td class="player-col">${p.name}</td>
-        ${cells}
-        <td class="total-cell">${total}</td>
-        <td>${removeBtn}</td>
-      </tr>`;
-    }).join('');
-  }
-
-  document.getElementById('passcodeInput').addEventListener('keydown', e => {
-    if(e.key === 'Enter') tryUnlock();
-  });
-  document.getElementById('playerName')?.addEventListener('keydown', e => {
-    if(e.key === 'Enter') addPlayer();
-  });
-
-  render();
-</script>
 
 </body>
 </html>
